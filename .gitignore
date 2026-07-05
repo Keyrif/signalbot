@@ -6,7 +6,7 @@
 *.lo
 *.o
 *.obj
-
+signalbot.vcxproj.user
 # Precompiled Headers
 *.gch
 *.pch
