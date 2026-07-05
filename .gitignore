@@ -10,7 +10,7 @@ signalbot.vcxproj.user
 # Precompiled Headers
 *.gch
 *.pch
-
+.env
 # Compiled Dynamic libraries
 *.so
 *.dylib
