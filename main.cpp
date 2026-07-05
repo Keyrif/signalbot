@@ -4,16 +4,20 @@
 
 int main() {
 	const char* phone_number = std::getenv("SIGNAL_PHONE");
+	const char* ytdlp = std::getenv("YTDLP_PATH");
+	const char* ytdlp_cookies = std::getenv("YTDLP_COOKIES");
 
-	if (!phone_number) {
-		std::cout << "ERROR: Cannot find the phone number!";
+	if (!phone_number || !ytdlp || !ytdlp_cookies) {
+		std::cout << "\nERROR: Missing variables from .env file! If not, run source .env!";
 		return 1;
 	}
 
-	SignalBot marcel;
+	SignalBot bot;
 
-	marcel.phoneNumber = phone_number;
-	marcel.listen();
+	bot.phone_number = phone_number;
+	bot.ytdlp_path = ytdlp;
+	bot.ytdlp_cookies = ytdlp_cookies;
+	bot.listen();
 
 	return 0;
 }

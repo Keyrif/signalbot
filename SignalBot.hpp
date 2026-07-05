@@ -7,7 +7,12 @@ private:
 	boost::process::opstream writing_channel;
 
 public:
-	std::string phoneNumber;
+	bool is_chatty = true; // default
+	std::string phone_number;
+	std::string ytdlp_path;
+	std::string ytdlp_cookies;
 	void listen();
 	void send_message(std::string text, std::string group_id, std::string group_name);
+	void send_video(std::string text, std::string group_id, std::string file_path);
 };
+
